@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EntityScan("com.example.spring_hibernate_web.entity")
+@EntityScan("com.rest.entity")
 @EnableTransactionManagement
 public class SpringMvcApplication {
 

@@ -22,7 +22,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public List<Customer> getCustomers() {
 		// create a query ... sort by lst name
 		TypedQuery<Customer> query = entityManager
-				.createQuery("from Customer order by lastName", Customer.class);
+				.createQuery("from Customer", Customer.class);
 
 		// execute query and get result list
 		// return the results
