@@ -3,10 +3,7 @@ package com.rest.rest;
 import com.rest.entity.Customer;
 import com.rest.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,6 +31,15 @@ public class CustomerRestController {
     }
 
     return customer;
+  }
+
+  // add mapping for POST /customers - add new customer
+  @PostMapping("/customers")
+  public Customer addCustomer (@RequestBody Customer customer) {
+    // also just in case the pass an id in jSON ... set id to -0
+    customer.setId(0);
+
+    return customerService.saveCustomer(customer);
   }
 
 }

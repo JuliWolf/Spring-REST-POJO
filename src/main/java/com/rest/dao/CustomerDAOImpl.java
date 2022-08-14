@@ -30,9 +30,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public void saveCustomer(Customer customer) {
+	public Customer saveCustomer(Customer customer) {
 		// save or update the customer
-		entityManager.merge(customer);
+		Customer newCustomer = entityManager.merge(customer);
+
+		return newCustomer;
 	}
 
 	@Override
