@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api")
+//@RestController
+//@RequestMapping("/api")
 public class EmployeeRestController {
 
   private EmployeeService employeeService;
@@ -37,7 +37,7 @@ public class EmployeeRestController {
     return employee;
   }
 
-  @PostMapping("/`1`")
+  @PostMapping("/employees")
   public Employee addEmployee(@RequestBody Employee employee) {
     // set id to 0
     employee.setId(0);
